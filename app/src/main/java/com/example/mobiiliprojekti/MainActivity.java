@@ -4,9 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 /*
-*
+* Initial commit test
 * TESTI TESTI
-* moroooooooooooooo
+*
 */
 
 public class MainActivity extends AppCompatActivity {
