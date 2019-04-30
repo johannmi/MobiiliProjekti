@@ -12,7 +12,7 @@ public class DateAndTime {
     private Date date;
     private DateFormat dateFormat;
     private String formattedDate;
-    Map<Integer, String> dayNames = new HashMap<Integer, String>();
+    Map<Integer, String> dayNames = new HashMap<>();
 
     public DateAndTime() {
         dayNames.put(1, "Sunnuntai");
