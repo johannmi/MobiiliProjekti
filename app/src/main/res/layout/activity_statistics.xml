@@ -6,33 +6,126 @@
     android:layout_height="match_parent"
     tools:context=".StatisticsActivity">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp" >
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
 
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:orientation="vertical" >
 
-        <TextView
-            android:id="@+id/textViewGraphTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Otsikko"
-            android:textSize="25dp" />
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="0dp">
 
-        <com.jjoe64.graphview.GraphView
-            android:id="@+id/graph"
-            android:layout_width="match_parent"
-            android:layout_height="200dip"
-            android:layout_below="@id/textViewGraphTitle"
-            android:layout_margin="5dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
 
-        </RelativeLayout>
+                    <TextView
+                        android:id="@+id/textDays"
+                        android:layout_width="210dp"
+                        android:layout_height="wrap_content"
+                        android:text="Monta merkintää näytetään?"
+                        android:layout_marginLeft="20dp"
+                        android:layout_centerVertical="true"/>
 
-    </android.support.v7.widget.CardView>
+                    <Spinner
+                        android:id="@+id/spinner"
+                        android:layout_width="90dp"
+                        android:layout_height="wrap_content"
+                        android:entries="@array/days_array"
+                        android:layout_marginLeft="20dp"
+                        android:layout_toRightOf="@+id/textDays"
+                        android:layout_centerVertical="true"
+                        android:textAlignment="center" />
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginBottom="0dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/textViewGraphTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="Mielialakaavio"
+                        android:textSize="25dp"
+                        android:layout_marginStart="20dp" />
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graph"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dip"
+                        android:layout_below="@id/textViewGraphTitle"
+                        android:layout_marginTop="15dp"/>
+
+                    <TextView
+                        android:id="@+id/textViewGraph"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/graph"
+                        android:layout_marginTop="10dp"
+                        android:text="Uusimmat merkinnät"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="8dp">
+
+                    <TextView
+                        android:id="@+id/textAverage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.5"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="35dp"
+                        android:layout_margin="20dp"
+                        android:textColor="#000000"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/textAverage"
+                        android:layout_margin="5dp"
+                        android:layout_centerHorizontal="true"
+                        android:text="Viimeisimpien mielialojen keskiarvo"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>

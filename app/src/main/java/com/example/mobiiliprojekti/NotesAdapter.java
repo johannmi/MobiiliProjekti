@@ -1,6 +1,7 @@
 package com.example.mobiiliprojekti;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,15 +11,34 @@ import android.widget.TextView;
 
 import java.util.List;
 
+/**
+ * Adapter for the RecyclerView to present the journal entries in CardViews
+ */
+
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder>{
 
     private Context mCtx;
     private List<Notes> notesList;
 
+    /**
+     *
+     * @param mCtx Needed to create layout inflater
+     * @param notesList List of data from the database stored in a Note class
+     */
+
     public NotesAdapter(Context mCtx, List<Notes> notesList) {
         this.mCtx = mCtx;
         this.notesList = notesList;
     }
+
+    /**
+     * Inflates the layout of a RecyclerView item
+     * and passes the view to NotesViewHolder and
+     * Creates a view holder instance
+     * @param viewGroup
+     * @param i
+     * @return Returns NotesViewHolder instance
+     */
 
     @Override
     public NotesViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
@@ -26,6 +46,13 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         View view = inflater.inflate(R.layout.note_layout, null);
         return new NotesViewHolder(view);
     }
+
+    /**
+     * Binds data to the UI-elements
+     * Gets data from the list of Notes
+     * @param holder NotesViewHolder
+     * @param position
+     */
 
     @Override
     public void onBindViewHolder(NotesViewHolder holder, int position) {
@@ -36,12 +63,36 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
         holder.textViewDone.setText(notes.getDone());
         holder.textViewNotes.setText(notes.getNotes());
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(notes.getImage()));
+
+        // Sets color depending on mood
+        if (notes.getMood().equals("Erinomainen")) {
+            holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood5));
+        } else if (notes.getMood().equals("Hyvä")) {
+            holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood4));
+        } else if (notes.getMood().equals("Neutraali")) {
+            holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood3));
+        }  else if (notes.getMood().equals("Huono")) {
+            holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood2));
+        }  else if (notes.getMood().equals("Hyvin huono")) {
+            holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood1));
+        }
+
     }
+
+    /**
+     *
+     * @return Returns size of the list
+     */
 
     @Override
     public int getItemCount() {
         return notesList.size();
     }
+
+    /**
+     * View holder for the journal entries
+     * Finds the views so data can be added to them
+     */
 
     class NotesViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;

@@ -3,4 +3,12 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="mood1">#d8271e</color>
+    <color name="mood2">#ed9c2a</color>
+    <color name="mood3">#cece27</color>
+    <color name="mood4">#94c635</color>
+    <color name="mood5">#34c924</color>
+    <color name="colorGraph">#991b7f</color>
+    <color name="colorLightGraph">#f87aff</color>
 </resources>

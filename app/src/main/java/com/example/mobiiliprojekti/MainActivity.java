@@ -2,14 +2,11 @@ package com.example.mobiiliprojekti;
 
 import android.content.Intent;
 import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -55,19 +52,19 @@ public class MainActivity extends AppCompatActivity {
 
         while(data.moveToNext()) {
 
-            if (data.getString(3).equals("1")) {
+            if (data.getString(3).equals("5")) {
                 moodName = "Erinomainen";
                 imageID = R.drawable.smile;
-            } else if (data.getString(3).equals("2")) {
+            } else if (data.getString(3).equals("4")) {
                 moodName = "Hyvä";
                 imageID = R.drawable.smile;
             } else if (data.getString(3).equals("3")) {
                 moodName = "Neutraali";
                 imageID = R.drawable.smile;
-            } else if (data.getString(3).equals("4")) {
+            } else if (data.getString(3).equals("2")) {
                 moodName = "Huono";
                 imageID = R.drawable.smile;
-            } else if (data.getString(3).equals("5")) {
+            } else if (data.getString(3).equals("1")) {
                 moodName = "Hyvin huono";
                 imageID = R.drawable.smile;
             }
@@ -93,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
         boolean insertData = dbHelper.addData(
                 dateAndTime.getFullDate(),
                 dateAndTime.getDayName() + " kello " + dateAndTime.getTime(),
-                "1",
+                "5",
                 "opiskelu • kaverit • urheilu • rentoutuminen",
                 "Tänään oli hyvä päivä :)"
         );
