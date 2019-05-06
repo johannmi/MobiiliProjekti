@@ -1,17 +1,17 @@
 <resources>
-    <string name="Mieliala">Mikä on mielialasi?</string>
-    <string name="DoneToday">Mitä olet tehnyt tänään?</string>
     <string name="app_name">MobiiliProjekti</string>
+    <string name="add_note">+ Lisää Merkintä</string>
+    <string name="DoneToday">Mitä olet tehnyt tänään?</string>
+    <string name="Mieliala">Mikä on mielialasi?</string>
+    <string name="Koulu">Koulu/Opiskelu</string>
+    <string name="Tyo">Työ</string>
+    <string name="Liikunta">Liikunta</string>
+    <string name="Elokuva">Elokuva</string>
+    <string name="Siivous">Siivous</string>
+    <string name="Kauppa">Kaupassa käynti</string>
+    <string name="Lukeminen">Lukeminen</string>
+    <string name="Peli">Pelaaminen</string>
+    <string name="Muistiinpanot">Muistiinpanot</string>
+    <string name="Lukeminen">Lukeminen</string>
     <string name="add_post">Tallenna</string>
-    <string name="add_koulu">Koulu/Opiskelu</string>
-    <string name="add_liikunta">Liikunta</string>
-    <string name="add_työ">Työ</string>
-    <string name="add_elokuva">Elokuva</string>
-    <string name="add_siivous">Siivous</string>
-    <string name="add_kauppa">Kaupassa käynti</string>
-    <string name="add_luku">Lukeminen</string>
-    <string name="add_peli">Pelaaminen</string>
-    <string name="add_notes">Muistiinpanot:</string>
-
-
 </resources>

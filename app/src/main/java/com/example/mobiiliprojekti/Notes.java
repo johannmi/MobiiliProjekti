@@ -1,40 +1,91 @@
 package com.example.mobiiliprojekti;
 
+/**
+ * Contains all information needed for one journal entry
+ * Information is stored in a database, put into an instance of Notes
+ * and Notes added to a list that is used tp create the main UI and shows the information
+ */
+
 public class Notes {
     private int id, image;
-    private String title, desc;
-    private double price, rating;
+    private String date, time, mood, done, notes;
 
-    public Notes(int id, String title, String desc, double rating, double price, int image) {
+    /**
+     *
+     * @param id ID from database
+     * @param image Image id
+     * @param date Date of the journal entry
+     * @param time Time of the entry
+     * @param mood User's mood
+     * @param done What the user did today
+     * @param notes User's own notes
+     */
+
+    public Notes(int id, int image, String date, String time, String mood, String done, String notes) {
         this.id = id;
         this.image = image;
-        this.title = title;
-        this.desc = desc;
-        this.price = price;
-        this.rating = rating;
+        this.date = date;
+        this.time = time;
+        this.mood = mood;
+        this.done = done;
+        this.notes = notes;
     }
 
     public int getId() {
         return id;
     }
 
+    /**
+     *
+     * @return Returns image id
+     */
+
     public int getImage() {
         return image;
     }
 
-    public String getTitle() {
-        return title;
+    /**
+     *
+     * @return Returns date
+     */
+
+    public String getDate() {
+        return date;
     }
 
-    public String getDesc() {
-        return desc;
+    /**
+     *
+     * @return Returns time
+     */
+
+    public String getTime() {
+        return time;
     }
 
-    public double getPrice() {
-        return price;
+    /**
+     *
+     * @return Returns mood
+     */
+
+    public String getMood() {
+        return mood;
     }
 
-    public double getRating() {
-        return rating;
+    /**
+     *
+     * @return Returns what the user did today
+     */
+
+    public String getDone() {
+        return done;
+    }
+
+    /**
+     *
+     * @return Returns the user's own notes
+     */
+
+    public String getNotes() {
+        return notes;
     }
 }

@@ -49,7 +49,7 @@
                 android:layout_width="365dp"
                 android:layout_height="31dp"
                 android:layout_marginTop="164dp"
-                android:text="@string/add_koulu"
+                android:text="@string/Koulu"
                 android:textColor="#800000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -59,7 +59,7 @@
                 android:layout_width="365dp"
                 android:layout_height="27dp"
                 android:layout_marginTop="32dp"
-                android:text="@string/add_työ"
+                android:text="@string/Tyo"
                 android:textColor="#FF0000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
@@ -69,7 +69,7 @@
                 android:layout_width="365dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="60dp"
-                android:text="@string/add_liikunta"
+                android:text="@string/Liikunta"
                 android:textColor="#0000FF"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
@@ -79,7 +79,7 @@
                 android:layout_width="365dp"
                 android:layout_height="23dp"
                 android:layout_marginTop="88dp"
-                android:text="@string/add_elokuva"
+                android:text="@string/Elokuva"
                 android:textColor="#000080"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
@@ -89,7 +89,7 @@
                 android:layout_width="365dp"
                 android:layout_height="23dp"
                 android:layout_marginTop="112dp"
-                android:text="@string/add_siivous"
+                android:text="@string/Siivous"
                 android:textColor="#008000"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
@@ -99,7 +99,7 @@
                 android:layout_width="365dp"
                 android:layout_height="23dp"
                 android:layout_marginTop="136dp"
-                android:text="@string/add_kauppa"
+                android:text="@string/Kauppa"
                 android:textColor="#00FF00"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
@@ -109,7 +109,7 @@
                 android:layout_width="365dp"
                 android:layout_height="23dp"
                 android:layout_marginTop="160dp"
-                android:text="@string/add_luku"
+                android:text="@string/Lukeminen"
                 android:textColor="#FFA500"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
@@ -119,7 +119,7 @@
                 android:layout_width="365dp"
                 android:layout_height="23dp"
                 android:layout_marginTop="184dp"
-                android:text="@string/add_peli"
+                android:text="@string/Peli"
                 android:textColor="#FFFF00"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
@@ -131,7 +131,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="284dp"
-                android:text="@string/add_notes"
+                android:text="@string/Muistiinpanot"
                 android:textColor="#000080"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -161,9 +161,9 @@
             android:id="@+id/appCompatButtonRegister"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/add_post"
+            android:layout_marginTop="40dp"
 
-            android:layout_marginTop="40dp"></android.support.v7.widget.AppCompatButton>
+            android:text="@string/add_post"></android.support.v7.widget.AppCompatButton>
 
 
     </android.support.v7.widget.LinearLayoutCompat>

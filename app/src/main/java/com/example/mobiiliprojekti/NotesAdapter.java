@@ -30,10 +30,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     @Override
     public void onBindViewHolder(NotesViewHolder holder, int position) {
         Notes notes = notesList.get(position);
-        holder.textViewTitle.setText(notes.getTitle());
-        holder.textViewDesc.setText(notes.getDesc());
-        holder.textViewRating.setText(String.valueOf(notes.getRating()));
-        holder.textViewPrice.setText(String.valueOf(notes.getPrice()));
+        holder.textViewDate.setText(notes.getDate());
+        holder.textViewTime.setText(notes.getTime());
+        holder.textViewMood.setText(notes.getMood());
+        holder.textViewDone.setText(notes.getDone());
+        holder.textViewNotes.setText(notes.getNotes());
         holder.imageView.setImageDrawable(mCtx.getResources().getDrawable(notes.getImage()));
     }
 
@@ -44,15 +45,17 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
 
     class NotesViewHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
-        TextView textViewTitle, textViewDesc, textViewRating, textViewPrice;
+        TextView textViewDate, textViewTime, textViewMood, textViewDone, textViewNotes;
 
         public NotesViewHolder(View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageView);
-            textViewTitle = itemView.findViewById(R.id.textViewTitle);
-            textViewDesc = itemView.findViewById(R.id.textViewShortDesc);
-            textViewRating = itemView.findViewById(R.id.textViewRating);
-            textViewPrice = itemView.findViewById(R.id.textViewPrice);
+            textViewDate = itemView.findViewById(R.id.textViewDate);
+            textViewTime = itemView.findViewById(R.id.textViewTime);
+            textViewMood = itemView.findViewById(R.id.textViewMood);
+            textViewDone = itemView.findViewById(R.id.textViewDone);
+            textViewNotes = itemView.findViewById(R.id.textViewNote);
+
         }
     }
 }
