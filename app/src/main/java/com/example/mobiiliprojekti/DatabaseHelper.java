@@ -102,6 +102,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
+     * Selects the last 7 rows
+     * @return Returns the 7 last rows
+     */
+
+    public Cursor getLatest(int amount) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT * FROM (SELECT * FROM " + TABLE_NAME + " ORDER BY ID DESC LIMIT " + amount + ") ORDER BY ID ASC";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    /**
      * Deletes all data from the table
      * Used for testing purposes
      */

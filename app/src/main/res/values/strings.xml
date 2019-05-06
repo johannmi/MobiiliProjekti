@@ -9,9 +9,14 @@
     <string name="Elokuva">Elokuva</string>
     <string name="Siivous">Siivous</string>
     <string name="Kauppa">Kaupassa käynti</string>
-    <string name="Lukeminen">Lukeminen</string>
     <string name="Peli">Pelaaminen</string>
     <string name="Muistiinpanot">Muistiinpanot</string>
 
     <string name="add_post">Tallenna</string>
+
+    <string-array name="days_array">
+        <item>7</item>
+        <item>14</item>
+        <item>30</item>
+    </string-array>
 </resources>
