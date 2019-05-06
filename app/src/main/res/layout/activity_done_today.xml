@@ -120,7 +120,7 @@
                 android:layout_height="23dp"
                 android:layout_marginTop="184dp"
                 android:text="@string/add_peli"
-                android:textColor="#FFF000"
+                android:textColor="#FFFF00"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/Koulu" />
 
