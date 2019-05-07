@@ -32,9 +32,10 @@
                         android:id="@+id/textDays"
                         android:layout_width="210dp"
                         android:layout_height="wrap_content"
-                        android:text="Monta merkintää näytetään?"
+                        android:text="@string/how_many_entries"
                         android:layout_marginLeft="20dp"
-                        android:layout_centerVertical="true"/>
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="20dp" />
 
                     <Spinner
                         android:id="@+id/spinner"
@@ -44,7 +45,9 @@
                         android:layout_marginLeft="20dp"
                         android:layout_toRightOf="@+id/textDays"
                         android:layout_centerVertical="true"
-                        android:textAlignment="center" />
+                        android:textAlignment="center"
+                        android:layout_marginStart="20dp"
+                        android:layout_toEndOf="@+id/textDays" />
 
                 </RelativeLayout>
 
@@ -68,8 +71,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="20dp"
-                        android:text="Mielialakaavio"
-                        android:textSize="25dp"
+                        android:text="@string/mood_graph"
+                        android:textSize="25sp"
                         android:layout_marginStart="20dp" />
 
                     <com.jjoe64.graphview.GraphView
@@ -77,7 +80,64 @@
                         android:layout_width="match_parent"
                         android:layout_height="200dip"
                         android:layout_below="@id/textViewGraphTitle"
-                        android:layout_marginTop="15dp"/>
+                        android:layout_toRightOf="@+id/moodImage5"
+                        android:layout_marginTop="15dp"
+                        android:layout_toEndOf="@+id/moodImage5" />
+
+                    <ImageView
+                        android:id="@+id/moodImage5"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/mood5fill"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_below="@+id/textViewGraphTitle"
+                        android:contentDescription="@string/content_desc"
+                        android:layout_marginEnd="4dp" />
+
+                    <ImageView
+                        android:id="@+id/moodImage4"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/mood4fill"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@+id/moodImage5"
+                        android:contentDescription="@string/content_desc"
+                        android:layout_marginEnd="4dp" />
+
+                    <ImageView
+                        android:id="@+id/moodImage3"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/mood3fill"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@+id/moodImage4"
+                        android:contentDescription="@string/content_desc"
+                        android:layout_marginEnd="4dp" />
+
+                    <ImageView
+                        android:id="@+id/moodImage2"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/mood2fill"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@+id/moodImage3"
+                        android:contentDescription="@string/content_desc"
+                        android:layout_marginEnd="4dp" />
+
+                    <ImageView
+                        android:id="@+id/moodImage1"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:src="@drawable/mood1fill"
+                        android:layout_marginRight="4dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@+id/moodImage2"
+                        android:contentDescription="@string/content_desc"
+                        android:layout_marginEnd="4dp" />
 
                     <TextView
                         android:id="@+id/textViewGraph"
@@ -85,8 +145,8 @@
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
                         android:layout_below="@+id/graph"
-                        android:layout_marginTop="10dp"
-                        android:text="Uusimmat merkinnät"/>
+                        android:layout_marginTop="12dp"
+                        android:text="@string/newest_entries"/>
 
                 </RelativeLayout>
 
@@ -99,26 +159,67 @@
 
                 <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:padding="8dp">
+                    android:layout_height="wrap_content" >
 
                     <TextView
                         android:id="@+id/textAverage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="4.5"
+                        android:layout_width="match_parent"
+                        android:layout_height="70dp"
+                        android:text="@string/default_average"
                         android:layout_centerHorizontal="true"
-                        android:textSize="35dp"
-                        android:layout_margin="20dp"
-                        android:textColor="#000000"/>
+                        android:textSize="35sp"
+                        android:gravity="center"
+                        android:background="#000000"
+                        android:textColor="#ffffff"/>
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_below="@+id/textAverage"
-                        android:layout_margin="5dp"
+                        android:layout_margin="15dp"
+                        android:textSize="17sp"
                         android:layout_centerHorizontal="true"
-                        android:text="Viimeisimpien mielialojen keskiarvo"/>
+                        android:text="@string/text_average"/>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:id="@+id/textDailyAverage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:text="@string/daily_average"
+                        android:textSize="25sp"
+                        android:layout_marginStart="20dp" />
+
+                    <com.jjoe64.graphview.GraphView
+                        android:id="@+id/graphAverage"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dip"
+                        android:layout_below="@id/textDailyAverage"
+                        android:layout_marginTop="15dp" />
+
+                    <TextView
+                        android:id="@+id/textViewGraphAverage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_below="@+id/graphAverage"
+                        android:layout_margin="15dp"
+                        android:text="@string/newest_entries"/>
 
                 </RelativeLayout>
 

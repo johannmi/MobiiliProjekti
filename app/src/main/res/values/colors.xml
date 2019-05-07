@@ -4,11 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
 
-    <color name="mood1">#d8271e</color>
-    <color name="mood2">#ed9c2a</color>
-    <color name="mood3">#cece27</color>
-    <color name="mood4">#94c635</color>
-    <color name="mood5">#34c924</color>
+    <color name="mood1">#df1000</color>
+    <color name="mood2">#e86d00</color>
+    <color name="mood3">#d5b419</color>
+    <color name="mood4">#92b11c</color>
+    <color name="mood5">#0f8c0c</color>
     <color name="colorGraph">#991b7f</color>
+    <color name="colorGraphDark">#5b0f4c</color>
     <color name="colorLightGraph">#f87aff</color>
 </resources>

@@ -73,7 +73,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
             holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood3));
         }  else if (notes.getMood().equals("Huono")) {
             holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood2));
-        }  else if (notes.getMood().equals("Hyvin huono")) {
+        }  else if (notes.getMood().equals("Kamala")) {
             holder.textViewMood.setTextColor(ContextCompat.getColor(mCtx,R.color.mood1));
         }
 

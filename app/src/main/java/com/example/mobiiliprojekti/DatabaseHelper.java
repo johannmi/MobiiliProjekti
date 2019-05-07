@@ -102,13 +102,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     /**
-     * Selects the last 7 rows
-     * @return Returns the 7 last rows
+     * Returns the wanted amount of rows from the bottom
+     * @param amount How many rows are returned
+     * @return Returns the rows
      */
 
     public Cursor getLatest(int amount) {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT * FROM (SELECT * FROM " + TABLE_NAME + " ORDER BY ID DESC LIMIT " + amount + ") ORDER BY ID ASC";
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    public Cursor getDistinct() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT DISTINCT " + COL1 + " FROM " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        return data;
+    }
+
+    public Cursor getInfoFromDate(String wantedDate) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT ID, " + COL1 + ", " + COL3 + " FROM " + TABLE_NAME + " WHERE " + COL1 + " = \"" + wantedDate + "\"";
         Cursor data = db.rawQuery(query, null);
         return data;
     }

@@ -6,13 +6,21 @@
     <string name="Koulu">Koulu/Opiskelu</string>
     <string name="Tyo">Työ</string>
     <string name="Liikunta">Liikunta</string>
+    <string name="Lukeminen">Lukeminen</string>
     <string name="Elokuva">Elokuva</string>
     <string name="Siivous">Siivous</string>
     <string name="Kauppa">Kaupassa käynti</string>
     <string name="Peli">Pelaaminen</string>
-    <string name="Muistiinpanot">Muistiinpanot</string>
+    <string name="Muistiinpanot">Omat muistiinpanot:</string>
 
     <string name="add_post">Tallenna</string>
+    <string name="how_many_entries">Monta merkintää näytetään?</string>
+    <string name="newest_entries">Uusimmat merkinnät</string>
+    <string name="default_average">4.5</string>
+    <string name="mood_graph">Mielialakaavio</string>
+    <string name="text_average">Viimeisimpien mielialojen keskiarvo</string>
+    <string name="content_desc">TODO</string>
+    <string name="daily_average">Päivittäinen keskiarvo</string>
 
     <string-array name="days_array">
         <item>7</item>

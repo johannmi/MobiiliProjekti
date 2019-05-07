@@ -35,8 +35,8 @@
 
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
-            android:backgroundTint="#dddddd"
-            android:layout_height="65dp" >
+            android:layout_height="65dp"
+            app:cardBackgroundColor="#dddddd" >
 
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
