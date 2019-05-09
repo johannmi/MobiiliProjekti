@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,7 @@ import android.widget.Toast;
 public class DoneToday extends AppCompatActivity {
     private Switch koulu, tyo, liikunta, elokuva, siivous, kauppa, lukeminen , peli;
     private Button save;
-    private EditText notes;
+    private EditText notes, muuta;
     private RadioButton mood;
     private RadioGroup radioGroup;
     private String userNotes = "", userMood = "3";
@@ -80,6 +81,7 @@ public class DoneToday extends AppCompatActivity {
         kauppa = findViewById(R.id.Kauppa);
         lukeminen = findViewById(R.id.Luku);
         peli = findViewById(R.id.Peli);
+        muuta = findViewById(R.id.Muuta);
         save = findViewById(R.id.appCompatButtonRegister);
         notes = findViewById (R.id.addNote);
 
@@ -105,6 +107,12 @@ public class DoneToday extends AppCompatActivity {
                 if ((kauppa).isChecked()) result.append(" • ").append(kauppa.getText());
                 if ((lukeminen).isChecked()) result.append(" • ").append(lukeminen.getText());
                 if ((peli).isChecked()) result.append(" • ").append(peli.getText());
+
+                if (TextUtils.isEmpty(muuta.getText().toString())) {
+                    // Do nothing
+                } else {
+                    result.append(" • ").append(muuta.getText());
+                }
 
                 userNotes = notes.getText().toString();
 
