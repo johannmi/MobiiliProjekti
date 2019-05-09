@@ -22,16 +22,24 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Collections;
 
+/**
+ * StatisticsActivity implements AdapterView.OnItemSelectedListener for a spinner
+ */
+
 public class StatisticsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
     private GraphView graph, barGraph;
     private DatabaseHelper dbHelper;
     private TextView textAverage, textViewGraph, textGraphAverage;
     private double averageMood;
-    private static DecimalFormat df = new DecimalFormat("0.0");
-    private static DecimalFormat df2 = new DecimalFormat("0,0");
-    private int amount = 7;
+    private static DecimalFormat df = new DecimalFormat("0.0"); // For rounding doubles
+    private int amount = 7; // Default value for entries displayed
     private Cursor data;
     private Spinner spinner;
+
+    /**
+     * Finds views and sets graph settings
+     * @param savedInstanceState Bundle
+     */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,8 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
         spinner.setOnItemSelectedListener(this);
         textViewGraph = findViewById(R.id.textViewGraph);
 
+        // Settings for line graph
+
         graph.getGridLabelRenderer().setVerticalLabelsVisible(false);
         graph.getGridLabelRenderer().setGridStyle(GridLabelRenderer.GridStyle.HORIZONTAL);
 
@@ -56,6 +66,8 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
         graph.getViewport().setMaxX(7);
         graph.getViewport().setMinY(1);
         graph.getViewport().setMaxY(5);
+
+        // Settings for bar graph
 
         barGraph.getGridLabelRenderer().setVerticalLabelsVisible(false);
         barGraph.getGridLabelRenderer().setHorizontalLabelsVisible(false);
@@ -69,6 +81,7 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
         barGraph.getViewport().setMinY(0);
         barGraph.getViewport().setMaxY(6);
 
+        // Creates an adapter for spinner and sets it
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this, R.array.days_array, android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -77,34 +90,56 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
         updateUI();
     }
 
+    /**
+     * Checks which item in the spinner is selected and
+     * changes the value of amount accordingly
+     * @param parent AdapterView for spinner
+     * @param view View
+     * @param pos position of item selected
+     * @param id long
+     */
+
     public void onItemSelected(AdapterView<?> parent, View view, int pos, long id) {
         amount = Integer.parseInt(parent.getItemAtPosition(pos).toString());
         updateUI();
     }
+
+    /**
+     * Default value for amount
+     * @param parent AdapterView
+     */
 
     public void onNothingSelected(AdapterView<?> parent) {
         amount = 7;
         updateUI();
     }
 
+    /**
+     * Updates the line graph and calculates average mood
+     */
+
     private void updateUI() {
-        data = dbHelper.getLatest(amount);
-        graph.getViewport().setMaxX(amount);
-        int dataY, position = 1;
+        data = dbHelper.getLatest(amount);      // Get specified amount of rows from the bottom of the database table
+        graph.getViewport().setMaxX(amount);    // Set graph bounds
+        int dataY, position = 1;                // Values to be added to graph
         DataPoint datapoint;
         averageMood = 0;
 
+        // Resets graph series
         graph.removeAllSeries();
+        // Creates new graph series
         LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(new DataPoint[] {});
+        // Graph styling
         series.setColor(getResources().getColor(R.color.colorGraph));
         series.setDrawBackground(true);
         series.setBackgroundColor(Color.argb(60,248, 122, 255));
 
+        // Iterates through data from database
         while(data.moveToNext()) {
-            dataY = Integer.parseInt(data.getString(3));
-            datapoint = new DataPoint(position,dataY);
-            series.appendData(datapoint, false, amount, false);
-            position++;
+            dataY = Integer.parseInt(data.getString(3));             // Get mood value
+            datapoint = new DataPoint(position,dataY);                          // Make datapoint
+            series.appendData(datapoint, false, amount, false); // Add datapoint to graph
+            position++;                                                         // Increase position (X axis value)
             averageMood += dataY;
         }
 
@@ -131,47 +166,64 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
         textAverage.setText(df.format(averageMood));
         textViewGraph.setText(amount + " uusinta merkintää");
 
+        // Draw data points
         series.setDrawDataPoints(true);
         graph.addSeries(series);
 
+        // Call update to the bar graph
         updateDailyAverage();
     }
 
+    /**
+     * Updates the bar graph
+     */
+
     public void updateDailyAverage() {
-        data = dbHelper.getDistinct();
+        data = dbHelper.getDistinct();                  // Get all distinct dates from database
         double dailyAverage;
         int averageDivider;
-        ArrayList<String> dateList = new ArrayList<>();
-        barGraph.getViewport().setMaxX(amount);
+        ArrayList<String> dateList = new ArrayList<>(); // List of distinct dates
+        barGraph.getViewport().setMaxX(amount);         // Set graph bounds
 
+        // Reset and create new series for bar graph
         barGraph.removeAllSeries();
         BarGraphSeries<DataPoint> series = new BarGraphSeries<>(new DataPoint[] {});
 
+        // Add distinct dates to dateList
         while(data.moveToNext()) {
             dateList.add(data.getString(0));
         }
 
+        // If the number of dates is larger that the amount of displayed dates
+        // create a sublist that only includes the last dates so that
+        // the list size is always the same (or smaller) as variable "amount"
         if (dateList.size() > amount) {
             dateList = new ArrayList<>(dateList.subList(dateList.size()-amount, dateList.size()));
         }
 
+        // Iterates through dateList to calculate mood average for each day
         for(int position=0; position<dateList.size(); position++) {
-            data = dbHelper.getInfoFromDate(dateList.get(position));
+            data = dbHelper.getInfoFromDate(dateList.get(position));    // Get data from date
             averageDivider = 0;
             dailyAverage = 0;
 
+            // Go through data and add it to dailyAverage
             while (data.moveToNext()) {
                 dailyAverage += Integer.parseInt(data.getString(2));
                 averageDivider++;
             }
 
-            dailyAverage = dailyAverage/averageDivider;
+            // Calculate dailyAverage
+            dailyAverage = dailyAverage / averageDivider;
 
+            // Round average
             double roundedAverage = Math.round(dailyAverage * 10) / 10.0;
 
+            // Add average data to the bar graph
             series.appendData(new DataPoint((position+1), roundedAverage), false, amount, false);
         }
 
+        // Set color for bars depending on mood (Y axis value)
         series.setValueDependentColor(new ValueDependentColor<DataPoint>() {
             @Override
             public int get(DataPoint data) {
@@ -189,6 +241,7 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
             }
         });
 
+        // Display Y axis value numbers on top of bars if less than 30 days are shown
         if (amount == 30) {
             series.setDrawValuesOnTop(false);
         } else {
@@ -197,6 +250,7 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
 
         textGraphAverage.setText(amount + " päivän keskimääräinen mieliala");
 
+        // Style and draw bar graph
         series.setValuesOnTopColor(Color.GRAY);
         series.setSpacing(20);
         barGraph.addSeries(series);

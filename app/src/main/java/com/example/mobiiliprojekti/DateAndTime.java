@@ -20,6 +20,10 @@ public class DateAndTime {
     Map<Integer, String> dayNames = new HashMap<>();    // Contains day names
     Map<String, String> monthNames = new HashMap<>();   // Contains month names
 
+    /**
+     * Constructor adds day and month names to lists
+     */
+
     public DateAndTime() {
         dayNames.put(1, "Sunnuntai");
         dayNames.put(2, "Maanantai");
@@ -44,7 +48,7 @@ public class DateAndTime {
     }
 
     /**
-     *
+     * Get full date
      * @return  Returns full date in dd. monthname yyyy format
      */
 
@@ -92,20 +96,7 @@ public class DateAndTime {
     }
 
     /**
-     *
-     * @return Returns day number
-     */
-
-    public String getDay() {
-        cal = Calendar.getInstance();
-        date = cal.getTime();
-        dateFormat = new SimpleDateFormat("dd");
-        formattedDate = dateFormat.format(date);
-        return formattedDate;
-    }
-
-    /**
-     *
+     * Get time
      * @return Returns time in HH:mm format
      */
 
@@ -118,7 +109,7 @@ public class DateAndTime {
     }
 
     /**
-     *
+     * Get day name
      * @return Returns day of the week
      */
 

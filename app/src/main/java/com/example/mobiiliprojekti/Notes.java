@@ -2,8 +2,8 @@ package com.example.mobiiliprojekti;
 
 /**
  * Contains all information needed for one journal entry
- * Information is stored in a database, put into an instance of Notes
- * and Notes added to a list that is used tp create the main UI and shows the information
+ * Information is stored in a database, put into an instance of Notes and
+ * the Notes added to a list that is used to create the main UI that displays the information
  */
 
 public class Notes {
@@ -31,12 +31,17 @@ public class Notes {
         this.notes = notes;
     }
 
+    /**
+     * Get id
+     * @return Returns id
+     */
+
     public int getId() {
         return id;
     }
 
     /**
-     *
+     * Get image
      * @return Returns image id
      */
 
@@ -45,7 +50,7 @@ public class Notes {
     }
 
     /**
-     *
+     * Get date
      * @return Returns date
      */
 
@@ -54,7 +59,7 @@ public class Notes {
     }
 
     /**
-     *
+     * Get time
      * @return Returns time
      */
 
@@ -63,7 +68,7 @@ public class Notes {
     }
 
     /**
-     *
+     * Get mood
      * @return Returns mood
      */
 
@@ -72,7 +77,7 @@ public class Notes {
     }
 
     /**
-     *
+     * Get done
      * @return Returns what the user did today
      */
 
@@ -81,7 +86,7 @@ public class Notes {
     }
 
     /**
-     *
+     * Get notes
      * @return Returns the user's own notes
      */
 

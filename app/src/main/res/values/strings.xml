@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Testi nimi</string>
+    <string name="app_name">MielialApp</string>
 
     <string name="add_note">+ Lisää Merkintä</string>
     <string name="DoneToday">Mitä olet tehnyt tänään?</string>

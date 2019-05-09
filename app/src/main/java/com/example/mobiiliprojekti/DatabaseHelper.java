@@ -24,7 +24,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Creates an instance of the database helper
-     * @param context
+     * @param context Context
      */
 
     public DatabaseHelper(Context context) {
@@ -33,7 +33,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * Creates table notes_table
-     * @param db
+     * @param db SQLiteDatabase
      */
 
     @Override
@@ -49,9 +49,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     /**
      * For upgrading the table
-     * @param db
-     * @param oldVersion
-     * @param newVersion
+     * @param db SQLiteDatabase
+     * @param oldVersion int
+     * @param newVersion int
      */
 
     @Override
@@ -114,6 +114,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    /**
+     * Get the amount of rows in the database
+     * @return Returns row count as an integer
+     */
+
     public int getSize () {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT COUNT(*) FROM " + TABLE_NAME;
@@ -123,10 +128,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         while(data.moveToNext()) {
             returnSize = Integer.parseInt(data.getString(0));
         }
-
-        Log.d("TESTI", "Arvo: " + returnSize);
         return returnSize;
     }
+
+    /**
+     * Selects all distinct dates
+     * @return Returns the different dates
+     */
 
     public Cursor getDistinct() {
         SQLiteDatabase db = this.getWritableDatabase();
@@ -134,6 +142,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         Cursor data = db.rawQuery(query, null);
         return data;
     }
+
+    /**
+     * Get all rows with the specified date
+     * @param wantedDate The date from which data is wanted
+     * @return Returns data where date = wantedDate
+     */
 
     public Cursor getInfoFromDate(String wantedDate) {
         SQLiteDatabase db = this.getWritableDatabase();

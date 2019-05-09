@@ -14,8 +14,6 @@ import java.util.List;
 
 /*
 * MainActivity
-*
-*
 */
 
 public class MainActivity extends AppCompatActivity {
@@ -30,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        notesList = new ArrayList<>();
+        notesList = new ArrayList<>();  // List of Note objects
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -39,17 +37,22 @@ public class MainActivity extends AppCompatActivity {
         updateUI();
     }
 
+    /**
+     * updateUI() adds all data to the UI from the database
+     */
+
     private void updateUI() {
-        Cursor data = dbHelper.getData();
-        int imageID = R.drawable.moodimg3;
-        String moodName = "Default";
+        Cursor data = dbHelper.getData();   // Get data from database
+        int imageID = R.drawable.moodimg3;  // Default mood image
+        String moodName = "Default";        // Default mood
 
+        // Clears the list when updateUI() is called
         notesList.clear();
-        //dbHelper.deleteData();
 
+        // Iterates through the data from database
         while(data.moveToNext()) {
 
-            // Selects mood name and image
+            // Selects mood name and image depending on what mood is stored in the database
             if (data.getString(3).equals("5")) {
                 moodName = "Erinomainen";
                 imageID = R.drawable.moodimg5;
@@ -67,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 imageID = R.drawable.moodimg1;
             }
 
+            // Adds Note object with data from database to the list
             notesList.add(
                 new Notes(
                         Integer.parseInt(data.getString(0)),
@@ -79,16 +83,22 @@ public class MainActivity extends AppCompatActivity {
                     ));
         }
 
+        // Reverses list so the newest entry is first
         Collections.reverse(notesList);
+
+        // Creates and assigns an adapter to the recycler view, notesList passed as a parameter
         adapter = new NotesAdapter(this, notesList);
         recyclerView.setAdapter(adapter);
     }
 
+    // Button click switches to DoneToday activity
     public void addNote(View v) {
         Intent intent = new Intent(this, DoneToday.class);
         startActivity(intent);
     }
 
+    // Adds functionality to the buttons at the bottom of the screen
+    // NOTE!: The last one on the right does nothing, no time to add extra
     public void switchActivity(View v) {
         switch(v.getId())
         {

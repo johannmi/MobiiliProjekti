@@ -32,11 +32,11 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     }
 
     /**
-     * Inflates the layout of a RecyclerView item
+     * Inflates the note layout of a RecyclerView item
      * and passes the view to NotesViewHolder and
      * Creates a view holder instance
-     * @param viewGroup
-     * @param i
+     * @param viewGroup viewGroup
+     * @param i i
      * @return Returns NotesViewHolder instance
      */
 
@@ -51,7 +51,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
      * Binds data to the UI-elements
      * Gets data from the list of Notes
      * @param holder NotesViewHolder
-     * @param position
+     * @param position Position of a Note object in a list
      */
 
     @Override
@@ -80,7 +80,7 @@ public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHol
     }
 
     /**
-     *
+     * Get item count
      * @return Returns size of the list
      */
 

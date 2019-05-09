@@ -46,6 +46,12 @@
                         android:layout_toRightOf="@+id/textDays"
                         android:layout_centerVertical="true"
                         android:textAlignment="center"
+                        android:paddingTop="2dp"
+                        android:paddingBottom="2dp"
+                        android:paddingEnd="25dp"
+                        android:paddingRight="25dp"
+                        android:paddingLeft="2dp"
+                        android:paddingStart="2dp"
                         android:layout_marginStart="20dp"
                         android:layout_toEndOf="@+id/textDays" />
 
