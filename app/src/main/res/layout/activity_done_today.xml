@@ -28,8 +28,8 @@
                 android:id="@+id/DoneToday"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="124dp"
                 android:text="@string/DoneToday"
                 android:textColor="#000000"
@@ -50,12 +50,12 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="36dp"
                     android:orientation="horizontal"
-                    >
+                    android:gravity="center_horizontal" >
 
                     <RadioButton
                         android:id="@+id/radio_1"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/mood1"
                         android:onClick="onRadioButtonClicked"
                         android:layout_margin="2dp"
@@ -64,8 +64,8 @@
 
                     <RadioButton
                         android:id="@+id/radio_2"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/mood2"
                         android:onClick="onRadioButtonClicked"
                         android:layout_margin="2dp"
@@ -73,8 +73,8 @@
 
                     <RadioButton
                         android:id="@+id/radio_3"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/mood3"
                         android:onClick="onRadioButtonClicked"
                         android:layout_margin="2dp"
@@ -82,8 +82,8 @@
 
                     <RadioButton
                         android:id="@+id/radio_4"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/mood4"
                         android:onClick="onRadioButtonClicked"
                         android:layout_margin="2dp"
@@ -91,8 +91,8 @@
 
                     <RadioButton
                         android:id="@+id/radio_5"
-                        android:layout_width="70dp"
-                        android:layout_height="70dp"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
                         android:background="@drawable/mood5"
                         android:onClick="onRadioButtonClicked"
                         android:layout_margin="2dp"
@@ -105,9 +105,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="30dp"
+                    android:layout_marginRight="15dp"
                     android:text=""
-                    android:textSize="20dp" />
+                    android:textSize="15dp" />
 
             </RelativeLayout>
 
@@ -115,8 +115,8 @@
                 android:id="@+id/Mieliala"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="32dp"
-                android:layout_marginLeft="32dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginLeft="15dp"
                 android:text="@string/Mieliala"
                 android:textColor="#000000"
                 android:textSize="20dp"
@@ -125,7 +125,7 @@
 
             <Switch
                 android:id="@+id/Koulu"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="164dp"
                 android:text="@string/Koulu"
@@ -135,7 +135,7 @@
 
             <Switch
                 android:id="@+id/Työ"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/Tyo"
@@ -145,7 +145,7 @@
 
             <Switch
                 android:id="@+id/Liikunta"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/Liikunta"
@@ -155,7 +155,7 @@
 
             <Switch
                 android:id="@+id/Elokuva"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/Elokuva"
@@ -165,7 +165,7 @@
 
             <Switch
                 android:id="@+id/Siivous"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/Siivous"
@@ -175,7 +175,7 @@
 
             <Switch
                 android:id="@+id/Kauppa"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/Kauppa"
@@ -185,7 +185,7 @@
 
             <Switch
                 android:id="@+id/Luku"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/Lukeminen"
@@ -195,7 +195,7 @@
 
             <Switch
                 android:id="@+id/Peli"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="30dp"
                 android:layout_marginTop="30dp"
                 android:text="@string/Peli"
@@ -205,7 +205,7 @@
 
             <EditText
                 android:id="@+id/Muuta"
-                android:layout_width="365dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:hint="Jotain muuta"
