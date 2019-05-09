@@ -28,6 +28,7 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
     private TextView textAverage, textViewGraph, textGraphAverage;
     private double averageMood;
     private static DecimalFormat df = new DecimalFormat("0.0");
+    private static DecimalFormat df2 = new DecimalFormat("0,0");
     private int amount = 7;
     private Cursor data;
     private Spinner spinner;
@@ -108,7 +109,11 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
         }
 
         // Calculates average mood
-        averageMood = averageMood/amount;
+        if (amount <= dbHelper.getSize()) {
+            averageMood = averageMood / amount;
+        } else {
+            averageMood = averageMood / dbHelper.getSize();
+        }
 
         // Sets color for average mood
         if (averageMood >= 4.5) {
@@ -162,7 +167,9 @@ public class StatisticsActivity extends AppCompatActivity implements AdapterView
 
             dailyAverage = dailyAverage/averageDivider;
 
-            series.appendData(new DataPoint((position+1), Double.valueOf(df.format(dailyAverage))), false, amount, false);
+            double roundedAverage = Math.round(dailyAverage * 10) / 10.0;
+
+            series.appendData(new DataPoint((position+1), roundedAverage), false, amount, false);
         }
 
         series.setValueDependentColor(new ValueDependentColor<DataPoint>() {

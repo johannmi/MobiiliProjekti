@@ -114,6 +114,20 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return data;
     }
 
+    public int getSize () {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String query = "SELECT COUNT(*) FROM " + TABLE_NAME;
+        Cursor data = db.rawQuery(query, null);
+        int returnSize = 0;
+
+        while(data.moveToNext()) {
+            returnSize = Integer.parseInt(data.getString(0));
+        }
+
+        Log.d("TESTI", "Arvo: " + returnSize);
+        return returnSize;
+    }
+
     public Cursor getDistinct() {
         SQLiteDatabase db = this.getWritableDatabase();
         String query = "SELECT DISTINCT " + COL1 + " FROM " + TABLE_NAME;
