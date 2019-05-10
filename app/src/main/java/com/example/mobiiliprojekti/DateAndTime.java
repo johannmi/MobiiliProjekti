@@ -10,6 +10,8 @@ import java.util.Map;
 /**
  * Makes getting date and time easier
  * Methods return date or time in the format needed
+ *
+ * TEHNYT JOHANNA
  */
 
 public class DateAndTime {

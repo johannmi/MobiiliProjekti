@@ -4,6 +4,8 @@ package com.example.mobiiliprojekti;
  * Contains all information needed for one journal entry
  * Information is stored in a database, put into an instance of Notes and
  * the Notes added to a list that is used to create the main UI that displays the information
+ *
+ * TEHNYT JOHANNA
  */
 
 public class Notes {

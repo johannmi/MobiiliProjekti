@@ -16,6 +16,8 @@ import android.widget.Toast;
 
 /**
  * Add new journal entry activity
+ *
+ * TEHNYT MIRA
  */
 
 public class DoneToday extends AppCompatActivity {

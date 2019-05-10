@@ -9,6 +9,8 @@ import android.util.Log;
 
 /**
  * Creates and manages the database
+ *
+ * TEHNYT JOHANNA
  */
 
 public class DatabaseHelper extends SQLiteOpenHelper {

@@ -13,6 +13,8 @@ import java.util.List;
 
 /**
  * Adapter for the RecyclerView to present the journal entries in CardViews
+ *
+ * TEHNYT JOHANNA
  */
 
 public class NotesAdapter extends RecyclerView.Adapter<NotesAdapter.NotesViewHolder>{

@@ -14,6 +14,8 @@ import java.util.List;
 
 /**
  * Main activity - displays journal entries
+ *
+ * TEHNYT JOHANNA
  */
 
 public class MainActivity extends AppCompatActivity {

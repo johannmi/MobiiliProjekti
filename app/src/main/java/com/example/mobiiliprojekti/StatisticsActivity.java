@@ -24,6 +24,8 @@ import java.util.Collections;
 
 /**
  * StatisticsActivity implements AdapterView.OnItemSelectedListener for a spinner
+ *
+ * TEHNYT JOHANNA
  */
 
 public class StatisticsActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
