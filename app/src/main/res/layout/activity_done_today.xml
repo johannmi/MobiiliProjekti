@@ -151,7 +151,7 @@
                 android:text="@string/Liikunta"
                 android:textColor="@color/colorGraphDark"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/Työ" />
+                app:layout_constraintTop_toTopOf="@+id/Tyo" />
 
             <Switch
                 android:id="@+id/Elokuva"
