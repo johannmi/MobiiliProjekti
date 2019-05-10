@@ -12,9 +12,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-/*
-* MainActivity
-*/
+/**
+ * Main activity - displays journal entries
+ */
 
 public class MainActivity extends AppCompatActivity {
 

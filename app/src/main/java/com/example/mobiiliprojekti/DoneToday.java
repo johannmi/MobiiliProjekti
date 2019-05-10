@@ -14,6 +14,10 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Add new journal entry activity
+ */
+
 public class DoneToday extends AppCompatActivity {
     private Switch koulu, tyo, liikunta, elokuva, siivous, kauppa, lukeminen , peli;
     private Button save;
@@ -89,7 +93,7 @@ public class DoneToday extends AppCompatActivity {
     public void addListenerOnButton() {
         radioGroup = findViewById(R.id.radioGroup);
         koulu = findViewById(R.id.Koulu);
-        tyo = findViewById(R.id.Työ);
+        tyo = findViewById(R.id.Tyo);
         liikunta = findViewById(R.id.Liikunta);
         elokuva = findViewById(R.id.Elokuva);
         siivous = findViewById(R.id.Siivous);
